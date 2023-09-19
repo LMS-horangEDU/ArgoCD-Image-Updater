@@ -8,3 +8,10 @@ images:
     newTag: latest
 resources:
   - ../../kustomize-sample
+patches:
+  - target:
+      kind: Deployment
+    patch: |-
+      - op: add
+      path: /spec/template/spec/imagePullSecrets
+      value: [{ name: dockerconfigjson }]
