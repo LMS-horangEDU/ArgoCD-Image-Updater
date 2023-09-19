@@ -1,7 +1,7 @@
 ---
 namespace: default
 replicas:
-  - name: nginx-deployment-test
+  - name: sample
     count: 2
 images:
   - name: horang-registry.kr.ncr.ntruss.com/lms-horang-frontend
