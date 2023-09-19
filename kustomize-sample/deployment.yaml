@@ -17,3 +17,5 @@ spec:
           name: sample
           ports:
             - containerPort: 80
+      imagePullSecrets:
+        - name: ncp-ncr-creds
