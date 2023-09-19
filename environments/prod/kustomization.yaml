@@ -7,4 +7,4 @@ images:
   - name: horang-registry.kr.ncr.ntruss.com/lms-horang-frontend
     newTag: latest
 resources:
-  - ../kustomize-sample
+  - ../../kustomize-sample
