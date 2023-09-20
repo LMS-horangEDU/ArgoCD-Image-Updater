@@ -4,10 +4,10 @@ metadata:
   name: frontend
 spec:
   ports:
-    port: 80
-    protocol: TCP
-    targetPort: 3000
-    nodePort: 33000
+    - name: http
+      port: 80
+      protocol: TCP
+      targetPort: 3000
   selector:
     app: frontend
   type: NodePort
