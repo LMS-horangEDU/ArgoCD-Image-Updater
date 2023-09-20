@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sample
+  name: frontend
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: sample
+      app: frontend
   template:
     metadata:
       labels:
-        app: sample
+        app: frontend
     spec:
       containers:
         - image: horang-registry.kr.ncr.ntruss.com/lms-horang-frontend:latest
