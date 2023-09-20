@@ -1,13 +1,13 @@
 ---
 namespace: default
 replicas:
-  - name: sample
+  - name: frontend
     count: 2
 images:
   - name: horang-registry.kr.ncr.ntruss.com/lms-horang-frontend
     newTag: latest
 resources:
-  - ../../kustomize-sample
+  - ../../project-lms-frontend
 # patches:
 #   - target:
 #       kind: Deployment

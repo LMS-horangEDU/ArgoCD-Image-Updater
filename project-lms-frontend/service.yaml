@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: sample
+  name: frontend
 spec:
   ports:
     - port: 80
       targetPort: 80
   selector:
-    app: sample
+    app: frontend
