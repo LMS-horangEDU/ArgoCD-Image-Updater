@@ -2,7 +2,7 @@
 namespace: default
 replicas:
   - name: frontend
-    count: 1
+    count: 2
 images:
   - name: horang-registry.kr.ncr.ntruss.com/lms-horang-frontend
     newTag: latest
