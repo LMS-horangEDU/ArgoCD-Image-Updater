@@ -6,11 +6,11 @@ replicas:
 images:
   - name: horang-registry.kr.ncr.ntruss.com/lms-horang-frontend
     newTag: latest
-  # - name: horang-registry.kr.ncr.ntruss.com/lms-horang-backend
-  #   newTag: latest
+  - name: horang-registry.kr.ncr.ntruss.com/lms-horang-backend
+    newTag: latest
 resources:
   - ../../project-lms-frontend
-  # - ../../project-lms-backend
+  - ../../project-lms-backend
 # patches:
 #   - target:
 #       kind: Deployment
