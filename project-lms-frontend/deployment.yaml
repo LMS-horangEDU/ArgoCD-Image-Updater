@@ -19,5 +19,5 @@ spec:
           name: horang-registry
           ports:
             - containerPort: 3000
-      imagePullSecrets:
-        - name: ncp-ncr-creds
+      # imagePullSecrets:
+      #   - name: ncp-ncr-creds
