@@ -1,1 +1,3 @@
 statefulset.yaml
+application.yaml
+repo-secret.yaml
