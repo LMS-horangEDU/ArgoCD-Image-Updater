@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend
+  name: frontend
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: backend
+      app: frontend
   template:
     metadata:
       labels:
-        app: backend
+        app: frontend
     spec:
       containers:
-        - image: horang-registry.kr.ncr.ntruss.com/lms-horang-backend:latest
+        - image: horang-registry.kr.ncr.ntruss.com/lms-horang-frontend:latest
           name: horang-registry
           ports:
-            - containerPort: 9000
+            - containerPort: 3000
       imagePullSecrets:
         - name: ncp-ncr-creds
