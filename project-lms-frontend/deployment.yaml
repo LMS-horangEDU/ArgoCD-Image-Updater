@@ -19,5 +19,8 @@ spec:
           name: horang-registry
           ports:
             - containerPort: 3000
+          resources:
+            requests:
+              cpu: 200m
       # imagePullSecrets:
       #   - name: ncp-ncr-creds
