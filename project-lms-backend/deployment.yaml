@@ -1,6 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  labels:
+    app: backend
   name: backend
 spec:
   replicas: 1
@@ -17,5 +19,8 @@ spec:
           name: horang-registry
           ports:
             - containerPort: 9000
+          resources:
+            requests:
+              cpu: 1000m
       # imagePullSecrets:
       #   - name: ncp-ncr-creds
