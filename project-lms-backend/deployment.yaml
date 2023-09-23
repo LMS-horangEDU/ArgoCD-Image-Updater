@@ -22,5 +22,10 @@ spec:
           resources:
             requests:
               cpu: 1000m
+          envFrom:
+            - configMapRef:
+                name: configmap-mongo
+            - configMapRef:
+                name: configmap-backend
       # imagePullSecrets:
       #   - name: ncp-ncr-creds
