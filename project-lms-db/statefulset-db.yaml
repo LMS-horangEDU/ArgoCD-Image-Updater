@@ -1,0 +1,39 @@
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: mongodb-sts-vol
+spec:
+  selector:
+    matchLabels:
+      app: mongodb-sts-vol
+  serviceName: mongodb-svc
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: mongodb-sts-vol
+    spec:
+      containers:
+        - name: mongodb
+          image: mongo
+          envFrom:
+            - configMapRef:
+                name: configmap-mongo
+          ports:
+            - containerPort: 27017
+          volumeMounts:
+            - name: csi-pod-pvc
+              mountPath: /data
+  volumeClaimTemplates:
+    - metadata:
+        name: csi-pod-pvc
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 10Gi
+        storageClassName: nks-block-storage
+        dataSource: # 기존 PVC의 이름을 지정
+          name: csi-pod-pvc-mongodb-sts-vol-0
+          kind: PersistentVolumeClaim

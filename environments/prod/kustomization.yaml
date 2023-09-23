@@ -11,6 +11,7 @@ images:
 resources:
   - ../../project-lms-frontend
   - ../../project-lms-backend
+  - ../../project-lms-db
 # patches:
 #   - target:
 #       kind: Deployment
