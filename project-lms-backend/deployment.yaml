@@ -21,7 +21,7 @@ spec:
             - containerPort: 9000
           resources:
             requests:
-              cpu: 1000m
+              cpu: 1500m
           envFrom:
             - configMapRef:
                 name: configmap-mongo

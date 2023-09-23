@@ -22,5 +22,8 @@ spec:
           resources:
             requests:
               cpu: 1000m
+          envFrom:
+            - configMapRef:
+                name: configmap-frontend
       # imagePullSecrets:
       #   - name: ncp-ncr-creds

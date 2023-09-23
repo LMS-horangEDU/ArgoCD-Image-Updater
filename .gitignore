@@ -6,3 +6,4 @@ hpa.sh
 argocd-image-updater-config.yaml
 end-secret.yaml
 backend-configmap.yaml
+frontend-configmap.yaml
