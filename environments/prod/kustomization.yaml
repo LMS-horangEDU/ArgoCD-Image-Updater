@@ -11,4 +11,4 @@ images:
 resources:
   - ../../project-lms-frontend
   - ../../project-lms-backend
-  # - ../../project-lms-db
+  - ../../project-lms-db
