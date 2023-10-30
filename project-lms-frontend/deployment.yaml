@@ -15,7 +15,7 @@ spec:
         app: frontend
     spec:
       containers:
-        - image: 844148244640.dkr.ecr.ap-northeast-2.amazonaws.com/lms-horang-frontend:latest
+        - image: 844148244640.dkr.ecr.ap-northeast-2.amazonaws.com/lms-horang-frontend
           name: aws
           ports:
             - containerPort: 3000
