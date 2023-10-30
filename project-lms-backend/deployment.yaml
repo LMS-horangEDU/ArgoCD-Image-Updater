@@ -27,3 +27,5 @@ spec:
                 name: configmap-mongo
             - configMapRef:
                 name: configmap-backend
+      imagePullSecrets:
+        - name: aws-ecr-creds
