@@ -33,7 +33,7 @@ spec:
         resources:
           requests:
             storage: 4Gi
-        storageClassName: gp2
+        storageClassName: ebs-sc
         dataSource: # 기존 PVC의 이름을 지정
           name: ebs-sc #csi-pod-pvc-mongodb-sts-vol-0
           kind: PersistentVolumeClaim
