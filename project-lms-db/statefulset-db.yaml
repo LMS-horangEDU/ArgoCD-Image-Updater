@@ -35,5 +35,5 @@ spec:
             storage: 4Gi
         storageClassName: ebs-sc
         dataSource: # 기존 PVC의 이름을 지정
-          name: ebs-sc #csi-pod-pvc-mongodb-sts-vol-0
+          name: csi-pod-pvc-mongodb-sts-vol-0
           kind: PersistentVolumeClaim
