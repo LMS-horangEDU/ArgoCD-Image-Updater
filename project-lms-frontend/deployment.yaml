@@ -15,8 +15,8 @@ spec:
         app: frontend
     spec:
       containers:
-        - image: horang-registry.kr.ncr.ntruss.com/lms-horang-frontend:latest
-          name: horang-registry
+        - image: 844148244640.dkr.ecr.ap-northeast-2.amazonaws.com/lms-horang-frontend:latest
+          name: aws
           ports:
             - containerPort: 3000
           resources:
@@ -25,5 +25,3 @@ spec:
           envFrom:
             - configMapRef:
                 name: configmap-frontend
-      # imagePullSecrets:
-      #   - name: ncp-ncr-creds

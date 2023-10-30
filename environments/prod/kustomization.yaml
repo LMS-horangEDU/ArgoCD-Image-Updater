@@ -4,18 +4,10 @@ replicas:
   - name: backend
     count: 1
 images:
-  - name: horang-registry.kr.ncr.ntruss.com/lms-horang-frontend
+  - name: 844148244640.dkr.ecr.ap-northeast-2.amazonaws.com/lms-horang-frontend
     newTag: latest
-  - name: horang-registry.kr.ncr.ntruss.com/lms-horang-backend
+  - name: 844148244640.dkr.ecr.ap-northeast-2.amazonaws.com/lms-horang-backend
     newTag: latest
 resources:
   - ../../project-lms-frontend
   - ../../project-lms-backend
-# patches:
-#   - target:
-#       kind: Deployment
-#     patch: |-
-#       - op: add
-#       path: /spec/template/spec/imagePullSecrets
-#       value: [{ name: dockerconfigjson }]
-
