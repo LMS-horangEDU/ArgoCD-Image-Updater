@@ -5,10 +5,9 @@ replicas:
     count: 1
 images:
   - name: 844148244640.dkr.ecr.ap-northeast-2.amazonaws.com/lms-horang-frontend
-    newTag: latest
+    newTag: sha-7fa99ef
   - name: 844148244640.dkr.ecr.ap-northeast-2.amazonaws.com/lms-horang-backend
-    newTag: latest
+    newTag: sha-7fa99ef
 resources:
   - ../../project-lms-frontend
   - ../../project-lms-backend
-#
