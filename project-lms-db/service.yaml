@@ -7,11 +7,11 @@ metadata:
     app: mongodb-svc
 spec:
   ports:
-    - name: mongodb-sts-vol
+    - name: mongodb-vol
       port: 27017
       protocol: TCP
       targetPort: 27017
       nodePort: 32000
   selector:
-    app: mongodb-sts-vol
+    app: mongodb-vol
   type: NodePort
