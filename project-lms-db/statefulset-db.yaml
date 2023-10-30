@@ -1,18 +1,18 @@
 ---
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
-  name: mongodb-vol
+  name: mongodb-sts-vol
 spec:
   selector:
     matchLabels:
-      app: mongodb-vol
+      app: mongodb-sts-vol
   serviceName: mongodb-svc
   replicas: 1
   template:
     metadata:
       labels:
-        app: mongodb-vol
+        app: mongodb-sts-vol
     spec:
       containers:
         - name: mongodb
@@ -35,5 +35,5 @@ spec:
             storage: 4Gi
         storageClassName: ebs-sc
         dataSource: # 기존 PVC의 이름을 지정
-          name: csi-pod-pvc-mongodb-vol-0
+          name: csi-pod-pvc-mongodb-sts-vol-0
           kind: PersistentVolumeClaim
