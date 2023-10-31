@@ -19,9 +19,9 @@ spec:
           name: aws
           ports:
             - containerPort: 9000
-          resources:
-            requests:
-              cpu: 800m
+          # resources:
+          #   requests:
+          #     cpu: 800m
           envFrom:
             - configMapRef:
                 name: configmap-mongo
