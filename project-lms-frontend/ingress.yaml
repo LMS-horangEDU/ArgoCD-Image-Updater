@@ -4,9 +4,8 @@ metadata:
   name: alb-ingress
   annotations:
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80},{"HTTPS": 443}]'
-    alb.ingress.kubernetes.io/ssl-certificate-no: "1004"
-    alb.ingress.kubernetes.io/actions.ssl-redirect: |
-      {"type":"redirection","redirection":{"port": "443","protocol":"HTTPS","statusCode":301}}
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-northeast-2:844148244640:certificate/dd36d867-99e3-4294-84ce-2f7dae7416b3
+    alb.ingress.kubernetes.io/actions.ssl-redirect: "443"
   labels:
     app: alb-ingress
 spec:
@@ -14,13 +13,13 @@ spec:
   rules:
     - http:
         paths:
-          - path: /*
-            pathType: Prefix
-            backend:
-              service:
-                name: ssl-redirect
-                port:
-                  name: use-annotation
+          # - path: /*
+          #   pathType: Prefix
+          #   backend:
+          #     service:
+          #       name: ssl-redirect
+          #       port:
+          #         name: use-annotation
           - path: /*
             pathType: Prefix
             backend:
