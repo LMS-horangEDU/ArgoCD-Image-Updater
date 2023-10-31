@@ -1,0 +1,46 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongodb-svc
+  labels:
+    app: mongodb-svc
+spec:
+  ports:
+    - name: mongodb-vol
+      port: 27017
+      protocol: TCP
+      targetPort: 27017
+      nodePort: 32000
+  selector:
+    app: mongodb-vol
+  type: NodePort
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongodb-vol
+spec:
+  selector:
+    matchLabels:
+      app: mongodb-vol
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: mongodb-vol
+    spec:
+      containers:
+        - name: mongodb
+          image: mongo
+          envFrom:
+            - configMapRef:
+                name: configmap-mongo
+          ports:
+            - containerPort: 27017
+      volumes:
+        - name: hostpath-volume
+          hostPath:
+            path: /mydata
+            type: Directory

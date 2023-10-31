@@ -7,3 +7,4 @@ end-secret.yaml
 backend-configmap.yaml
 frontend-configmap.yaml
 sc.yaml
+dbdeploy.yaml
