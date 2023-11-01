@@ -19,9 +19,9 @@ spec:
           name: aws
           ports:
             - containerPort: 3000
-          # resources:
-          #   requests:
-          #     cpu: 800m
+          resources:
+            requests:
+              cpu: 400m
           envFrom:
             - configMapRef:
                 name: configmap-frontend
