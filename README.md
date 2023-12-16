@@ -49,6 +49,28 @@
 - Ingress를 통해 외부 Client가 Frontend UI에 접근하며, 서비스 간에는 클러스터 내부 IP를 통한 통신이 이루어집니다.
 ```
 
+## Auto Scaling
+
+![img](https://github.com/LMS-horangEDU/ArgoCD-Image-Updater/assets/88238006/328a1915-a08e-44ac-ac3a-b96b0cf30e1b)
+
+#### 오토스케일링
+
+```
+- Horizontal Pod Autoscaler는 컨테이너의 자원 사용률을 모니터링하여
+컨테이너 수를 자동으로 조절합니다.
+- Cluster Autoscaler는 노드의 자원 사용률을 모니터링하여 노드 수를 조절합니다.
+- 프론트엔드 파드가 하나인 상태에서 부하를 증가시키자 새로운 파드가 생성되며
+노드 리소스가 부족하여 팬딩 상태가 된 파드를 Cluster Autoscaler가
+노드를 자동으로 확장하여 팬딩된 파드를 새로운 노드에 할당합니다.
+```
+
+<img width="957" alt="스크린샷 2023-12-16 201435" src="https://github.com/LMS-horangEDU/ArgoCD-Image-Updater/assets/88238006/b3a66112-26b0-465d-b23c-5eaa17762e9b">
+<img width="929" alt="스크린샷 2023-12-16 201643" src="https://github.com/LMS-horangEDU/ArgoCD-Image-Updater/assets/88238006/64658d64-bfe0-486d-8aca-92f8429df426">
+
+![2](https://github.com/LMS-horangEDU/ArgoCD-Image-Updater/assets/88238006/3fde418d-4b34-4c9d-ae3c-0a2de7cc992e)
+![3](https://github.com/LMS-horangEDU/ArgoCD-Image-Updater/assets/88238006/26c88772-120b-4b7e-ab54-e692b90809d9)
+![4](https://github.com/LMS-horangEDU/ArgoCD-Image-Updater/assets/88238006/78d7e077-baa3-4edf-9d72-0d6ec89c87f4)
+
 ## 느낀점
 
 쿠버네티스에 어플리케이션을 배포하고 오토스케일링과 CSI 드라이버로 DB를 StatefulSet으로 구성하는 경험이 재미있었습니다. 또한 Helm으로 ArgoCD를 설치하여 배포를 자동화하는 경험을 할 수 있어 좋았습니다.
